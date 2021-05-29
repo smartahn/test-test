@@ -1,0 +1,14 @@
+name: Dispatch
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test-script:
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v2
+      - name: View context attributes
+        uses: actions/github-script@v4
+        with:
+          script: console.log(context)
